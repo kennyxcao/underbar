@@ -166,7 +166,7 @@
         accumulator = ele;
         hasAccum = true;
       } else {
-        accumulator = iterator(accumulator, ele, index, collection);
+        accumulator = iterator(accumulator, ele, index, collectionstion);
       }
     });
     return accumulator;
@@ -202,7 +202,7 @@
     iterator = (arguments.length < 2) ? _.identity : iterator;
     return !_.every(collection, function(ele, index, collection) {
       return !iterator(ele, index, collection);
-    })
+    });
   };
 
 
@@ -297,7 +297,7 @@
       if (!(args in cache))
         cache[args] = func.apply(this, arguments);
       return cache[args];
-    }
+    };
   };
 
   // Delays a function for the given number of milliseconds, and then calls
@@ -440,7 +440,7 @@
 
     return function() {
       if(!timer) {
-        func.apply(this, arguments)
+        func.apply(this, arguments);
         timer = true;
         setTimeout(function() {
           timer = false;
